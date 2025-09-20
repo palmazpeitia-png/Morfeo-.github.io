@@ -1,12 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Mi sitio</title>
-  </head>
-  <body>
-    <h1>¡Hola, GitHub Pages!</h1>
-    <p>Mi primera página publicada.</p>
-  </body>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#sobre-mi">Sobre mí</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="proyecto">
+            <h3>Proyecto 1</h3>
+            <p>Descripción breve del proyecto.</p>
+            <button onclick="mostrarCodigo()">Ver código JS</button>
+            <pre id="codigo-js" style="display:none;">
+// Ejemplo de código JavaScript
+function saludo() {
+    alert('Hola desde el proyecto 1!');
+}
+            </pre>
+        </div>
+        <!-- Puedes agregar más proyectos aquí -->
+    </section>
+
+    <section id="sobre-mi">
+        <h2>Sobre mí</h2>
+        <p>Breve descripción sobre ti, tus habilidades y experiencia.</p>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <form action="contacto.php" method="POST">
+            <label for="nombre">Nombre:</label><br />
+            <input type="text" id="nombre" name="nombre" required /><br />
+
+            <label for="email">Email:</label><br />
+            <input type="email" id="email" name="email" required /><br />
+
+            <label for="mensaje">Mensaje:</label><br />
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br />
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© 2024 Mi Portafolio</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
 </html>
