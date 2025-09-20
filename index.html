@@ -2,102 +2,207 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portafolio | Tonathiu Palma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tonathiu Palma | Portafolio</title>
+  <meta name="description" content="Diseñador y desarrollador web. Experto en Adobe, WordPress, PHP y marketing digital." />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/3d9f5c2c8f.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="logo">🌿 Tonathiu Palma</div>
-    <nav>
-      <ul>
+  <!-- Header / Navbar -->
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Inicio">🌿 Tonathiu</a>
+    <nav class="nav" aria-label="Principal">
+      <button class="nav__toggle" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" class="nav__menu">
         <li><a href="#inicio">Inicio</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
         <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#logros">Logros</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#sobre-mi">Sobre mí</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="#contacto" class="btn btn--sm">Contacto</a></li>
       </ul>
     </nav>
+    <button id="themeToggle" class="toggle" aria-label="Cambiar tema">🌙</button>
   </header>
 
   <!-- Hero -->
-  <section id="inicio" class="hero">
-    <h1>Soy <span class="typing"></span></h1>
-    <p>Diseño y desarrollo experiencias digitales con impacto.</p>
-    <a href="#contacto" class="btn">Trabajemos juntos</a>
+  <section id="inicio" class="hero container reveal">
+    <div class="hero__text">
+      <h1>Creo experiencias <span class="accent">digitales</span> que convierten</h1>
+      <p class="lead">
+        <span class="typing" aria-live="polite"></span>
+      </p>
+      <div class="hero__cta">
+        <a href="#proyectos" class="btn">Ver proyectos</a>
+        <a href="docs/CV_Tonathiu_Palma.pdf" class="btn btn--ghost" download>Descargar CV</a>
+      </div>
+      <ul class="badges" aria-label="Tecnologías principales">
+        <li>HTML</li><li>CSS</li><li>JS</li><li>PHP</li><li>WordPress</li><li>Adobe Suite</li><li>Google Ads</li>
+      </ul>
+    </div>
+    <figure class="hero__media">
+      <img src="img/hero.jpg" alt="Mockup de proyectos de Tonathiu" loading="eager">
+      <figcaption>Diseño + Código + Performance</figcaption>
+    </figure>
   </section>
 
-  <!-- Proyectos -->
-  <section id="proyectos">
-    <h2>🚀 Proyectos Destacados</h2>
-    <div class="grid">
-      <div class="card">
-        <img src="https://picsum.photos/500/300?random=1" alt="Proyecto 1">
-        <h3>Landing Page Spa</h3>
-        <p>Diseño web elegante y minimalista para un centro de capacitación.</p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/500/300?random=2" alt="Proyecto 2">
-        <h3>Marketing Campaign</h3>
-        <p>Campaña integral con branding, video y anuncios en Google Ads.</p>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/500/300?random=3" alt="Proyecto 3">
-        <h3>App Mobile Expo</h3>
-        <p>Aplicación móvil creada con React Native y Expo Router.</p>
-      </div>
+  <!-- Proyectos con filtros y modal -->
+  <section id="proyectos" class="container section">
+    <h2 class="section__title">Proyectos destacados</h2>
+    <div class="filters" role="tablist" aria-label="Filtrar proyectos">
+      <button class="chip is-active" data-filter="all" role="tab" aria-selected="true">Todos</button>
+      <button class="chip" data-filter="web" role="tab">Web</button>
+      <button class="chip" data-filter="branding" role="tab">Branding</button>
+      <button class="chip" data-filter="ads" role="tab">Ads/Video</button>
+    </div>
+
+    <div class="grid reveal" id="projectsGrid" aria-live="polite">
+      <!-- CARD -->
+      <article class="card" data-cat="web">
+        <img src="https://picsum.photos/seed/spa/600/400" alt="Landing Spa" />
+        <div class="card__body">
+          <h3>Landing Spa Academy</h3>
+          <p>Landing premium para academia de terapias. HTML/CSS/JS + performance 95+.</p>
+          <div class="tags"><span>Web</span><span>UI</span><span>SEO</span></div>
+          <div class="card__actions">
+            <a href="https://tusitio.com/spa" target="_blank" rel="noopener" class="btn btn--sm">Live</a>
+            <button class="btn btn--sm btn--ghost" data-modal='{"title":"Landing Spa Academy","imgs":["https://picsum.photos/seed/spa1/1200/800","https://picsum.photos/seed/spa2/1200/800"],"desc":"Proceso de diseño, wireframes y componentes reutilizables."}'>Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="branding">
+        <img src="https://picsum.photos/seed/brand/600/400" alt="Branding Sia'an Ka'an" />
+        <div class="card__body">
+          <h3>Branding Sia’an Ka’an</h3>
+          <p>Logo, paleta, papelería y guía de estilo con inspiración maya.</p>
+          <div class="tags"><span>Branding</span><span>Illustrator</span></div>
+          <div class="card__actions">
+            <button class="btn btn--sm btn--ghost" data-modal='{"title":"Branding Sia’an Ka’an","imgs":["https://picsum.photos/seed/brand1/1200/800","https://picsum.photos/seed/brand2/1200/800"],"desc":"Sistema visual, retícula y aplicaciones."}'>Ver más</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="card" data-cat="ads">
+        <img src="https://picsum.photos/seed/ads/600/400" alt="Campaña Google Ads" />
+        <div class="card__body">
+          <h3>Campaña 360°</h3>
+          <p>Creatividades, landing y optimización en Google Ads/Meta. +42% conversiones.</p>
+          <div class="tags"><span>Ads</span><span>Video</span></div>
+          <div class="card__actions">
+            <button class="btn btn--sm btn--ghost" data-modal='{"title":"Campaña 360°","imgs":["https://picsum.photos/seed/ads1/1200/800"],"desc":"Segmentación, A/B testing y resultados."}'>Ver más</button>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
-  <!-- Habilidades -->
-  <section id="habilidades">
-    <h2>🛠️ Habilidades</h2>
+  <!-- Habilidades con barras animadas -->
+  <section id="habilidades" class="container section reveal">
+    <h2 class="section__title">Habilidades</h2>
     <div class="skills">
-      <span>HTML</span>
-      <span>CSS</span>
-      <span>JavaScript</span>
-      <span>PHP</span>
-      <span>WordPress</span>
-      <span>Adobe Photoshop</span>
-      <span>Illustrator</span>
-      <span>Premiere</span>
-      <span>After Effects</span>
-      <span>Google Ads</span>
-      <span>GIT / GITHUB</span>
-       <span>Facebook Ads</span>
-       <span>Analisis de datos</span>
+      <div class="skill"><span>HTML/CSS</span><div class="bar" data-value="95"><i></i></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar" data-value="85"><i></i></div></div>
+      <div class="skill"><span>PHP / WordPress</span><div class="bar" data-value="88"><i></i></div></div>
+      <div class="skill"><span>Photoshop / Illustrator</span><div class="bar" data-value="92"><i></i></div></div>
+      <div class="skill"><span>Premiere / After Effects</span><div class="bar" data-value="80"><i></i></div></div>
+      <div class="skill"><span>Google Ads</span><div class="bar" data-value="86"><i></i></div></div>
+    </div>
+  </section>
+
+  <!-- Logros / Contadores -->
+  <section id="logros" class="stats section">
+    <div class="container reveal stats__grid">
+      <div class="stat"><span class="count" data-target="120">0</span><small>Proyectos</small></div>
+      <div class="stat"><span class="count" data-target="50">0</span><small>Clientes felices</small></div>
+      <div class="stat"><span class="count" data-target="10">0</span><small>Años de experiencia</small></div>
+      <div class="stat"><span class="count" data-target="8">0</span><small>Certificaciones</small></div>
+    </div>
+  </section>
+
+  <!-- Testimonios (slider) -->
+  <section id="testimonios" class="container section reveal">
+    <h2 class="section__title">Testimonios</h2>
+    <div class="slider" aria-roledescription="carousel" aria-label="Testimonios">
+      <button class="slider__btn prev" aria-label="Anterior">‹</button>
+      <div class="slider__track" id="sliderTrack">
+        <blockquote class="slide">
+          <p>“Tonathiu llevó nuestra marca a otro nivel. Diseño impecable y resultados rápidos.”</p>
+          <cite>— SK Wellness Center</cite>
+        </blockquote>
+        <blockquote class="slide">
+          <p>“Landing optimizada y campañas que convirtieron desde la primera semana.”</p>
+          <cite>— Cliente Marketing</cite>
+        </blockquote>
+        <blockquote class="slide">
+          <p>“Excelente comunicación, código limpio y entrega puntual.”</p>
+          <cite>— Proyecto WordPress</cite>
+        </blockquote>
+      </div>
+      <button class="slider__btn next" aria-label="Siguiente">›</button>
     </div>
   </section>
 
   <!-- Sobre mí -->
-  <section id="sobre-mi">
-    <h2>👨‍💻 Sobre mí</h2>
-    <p>
-      Soy <strong>Tonathiu Palma</strong>, diseñador y desarrollador web con más de 10 años de experiencia en
-      marketing digital, diseño gráfico y creación de contenido. Me apasiona unir la tecnología con la creatividad
-      para construir proyectos digitales que inspiran y generan resultados.
-    </p>
+  <section id="sobre-mi" class="container section reveal about">
+    <div class="about__media">
+      <img src="img/profile.jpg" alt="Foto de Tonathiu">
+    </div>
+    <div class="about__text">
+      <h2 class="section__title">Sobre mí</h2>
+      <p>Soy diseñador y desarrollador web con enfoque en rendimiento, accesibilidad y estética. Domino Adobe (PS, AI, PR, AE), WordPress/PHP y campañas de pago. Me gusta crear sistemas de diseño reutilizables y experiencias que generan resultados reales.</p>
+      <ul class="list">
+        <li>⚙️ Stack: HTML, CSS, JS, PHP, WP, MySQL</li>
+        <li>🎯 Marketing: SEO, SEM, Analytics, Funnels</li>
+        <li>🎨 Diseño: Branding, UI Kits, Motion</li>
+      </ul>
+      <a class="btn" href="#contacto">Hablemos</a>
+    </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto">
-    <h2>📩 Contáctame</h2>
-    <form action="contacto.php" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
+  <section id="contacto" class="container section reveal">
+    <h2 class="section__title">Contáctame</h2>
+    <form id="contactForm" class="form" novalidate>
+      <div class="field">
+        <label for="nombre">Nombre</label>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required />
+        <small class="error"></small>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+        <small class="error"></small>
+      </div>
+      <div class="field">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame sobre tu proyecto" required></textarea>
+        <small class="error"></small>
+      </div>
+      <button type="submit" class="btn">Enviar</button>
+      <p id="formMsg" role="status" aria-live="polite"></p>
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Tonathiu Palma | Diseñado con 💻 y creatividad</p>
+  <!-- Modal -->
+  <dialog id="modal" class="modal">
+    <button class="modal__close" aria-label="Cerrar">✕</button>
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+    <div class="modal__gallery" id="modalGallery" aria-live="polite"></div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Tonathiu Palma • Hecho con 💻 + ☕</p>
+      <a href="#top" class="to-top" aria-label="Volver arriba">↑</a>
+    </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>
 
