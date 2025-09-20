@@ -1,64 +1,103 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mi Portafolio</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio | Tonathiu Palma</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/3d9f5c2c8f.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>Mi Portafolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Header -->
+  <header>
+    <div class="logo">🌿 Tonathiu Palma</div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section id="proyectos">
-        <h2>Proyectos</h2>
-        <div class="proyecto">
-            <h3>Proyecto 1</h3>
-            <p>Descripción breve del proyecto.</p>
-            <button onclick="mostrarCodigo()">Ver código JS</button>
-            <pre id="codigo-js" style="display:none;">
-// Ejemplo de código JavaScript
-function saludo() {
-    alert('Hola desde el proyecto 1!');
-}
-            </pre>
-        </div>
-        <!-- Puedes agregar más proyectos aquí -->
-    </section>
+  <!-- Hero -->
+  <section id="inicio" class="hero">
+    <h1>Soy <span class="typing"></span></h1>
+    <p>Diseño y desarrollo experiencias digitales con impacto.</p>
+    <a href="#contacto" class="btn">Trabajemos juntos</a>
+  </section>
 
-    <section id="sobre-mi">
-        <h2>Sobre mí</h2>
-        <p>Breve descripción sobre ti, tus habilidades y experiencia.</p>
-    </section>
+  <!-- Proyectos -->
+  <section id="proyectos">
+    <h2>🚀 Proyectos Destacados</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://picsum.photos/500/300?random=1" alt="Proyecto 1">
+        <h3>Landing Page Spa</h3>
+        <p>Diseño web elegante y minimalista para un centro de capacitación.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/500/300?random=2" alt="Proyecto 2">
+        <h3>Marketing Campaign</h3>
+        <p>Campaña integral con branding, video y anuncios en Google Ads.</p>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/500/300?random=3" alt="Proyecto 3">
+        <h3>App Mobile Expo</h3>
+        <p>Aplicación móvil creada con React Native y Expo Router.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="contacto">
-        <h2>Contacto</h2>
-        <form action="contacto.php" method="POST">
-            <label for="nombre">Nombre:</label><br />
-            <input type="text" id="nombre" name="nombre" required /><br />
+  <!-- Habilidades -->
+  <section id="habilidades">
+    <h2>🛠️ Habilidades</h2>
+    <div class="skills">
+      <span>HTML</span>
+      <span>CSS</span>
+      <span>JavaScript</span>
+      <span>PHP</span>
+      <span>WordPress</span>
+      <span>Adobe Photoshop</span>
+      <span>Illustrator</span>
+      <span>Premiere</span>
+      <span>After Effects</span>
+      <span>Google Ads</span>
+      <span>GIT / GITHUB</span>
+       <span>Facebook Ads</span>
+       <span>Analisis de datos</span>
+    </div>
+  </section>
 
-            <label for="email">Email:</label><br />
-            <input type="email" id="email" name="email" required /><br />
+  <!-- Sobre mí -->
+  <section id="sobre-mi">
+    <h2>👨‍💻 Sobre mí</h2>
+    <p>
+      Soy <strong>Tonathiu Palma</strong>, diseñador y desarrollador web con más de 10 años de experiencia en
+      marketing digital, diseño gráfico y creación de contenido. Me apasiona unir la tecnología con la creatividad
+      para construir proyectos digitales que inspiran y generan resultados.
+    </p>
+  </section>
 
-            <label for="mensaje">Mensaje:</label><br />
-            <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br />
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>📩 Contáctame</h2>
+    <form action="contacto.php" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo" required>
+      <textarea name="mensaje" rows="5" placeholder="Tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
 
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Tonathiu Palma | Diseñado con 💻 y creatividad</p>
+  </footer>
 
-    <footer>
-        <p>© 2024 Mi Portafolio</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
+
