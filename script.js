@@ -175,4 +175,3 @@ $('#contactForm').addEventListener('submit', e=>{
     formMsg.style.color = '#ff6767';
   }
 });
-
